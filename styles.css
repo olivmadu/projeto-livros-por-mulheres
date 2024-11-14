@@ -2,70 +2,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono:ital,wght@0,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
+/* Reset de margens, espaçamentos e box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilização do corpo da página */
 body {
-    font-family: "Cutive mono", sans-serif;
-    background-color: #9b59b6;
+    font-family: "Cutive mono", sans-serif; 
+    background-color: #9b59b6; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100vh; 
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden; 
 }
 
+/* Barra de navegação */
 nav {
     background-color: #0f5224;
     width: 100vw; 
-    padding: 1rem 0; 
+    padding: 1rem 0;
     display: flex;
     justify-content: left;
 }
 
+/* Menu de navegação */
 .menu {
-    list-style-type: none;
+    list-style-type: none; 
     display: flex;
     gap: 2rem; 
 }
 
+/* Links do menu */
 .menu li a {
-    text-decoration: none;
+    text-decoration: none; 
     color: #fff;
     font-size: 1.1rem;
     font-family: 'Lexend Deca', sans-serif;
-    transition: color 0.3s;
+    transition: color 0.3s; 
     padding: 0.5rem 1rem;
     border-radius: 8px;
 }
 
+/* Efeito de hover nos links do menu */
 .menu li a:hover {
-    color: #f65a2a; /* Cor de destaque no hover */
+    color: #f65a2a; 
 }
 
-/* Animação para o título */
+/* Estilo do título principal */
 h1 {
     font-size: 2.5rem;
     color: #f65a2a;
     background-color: #0f5224;
     width: 50vw;
     text-align: center;
-    letter-spacing: 0.4rem;
+    letter-spacing: 0.4rem; 
     padding: 10px;
     border-radius: 10px;
-    animation: fadeIn 2s ease;
+    animation: fadeIn 2s ease; 
     margin: auto;
     margin-top: 40px;
     margin-bottom: 50px;
 }
 
-/* Transição suave para os botões */
+/* Estilo para botões */
 section button, .btn-pesquisa {
     padding: 0.8rem 1.2rem;
     border: none;
@@ -75,15 +81,17 @@ section button, .btn-pesquisa {
     font-family: 'Lexend Deca';
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
+/* Efeito de hover nos botões */
 section button:hover, .btn-pesquisa:hover {
     background-color: #f65a2a;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05); 
 }
 
+/* Seção principal */
 section {
     display: flex;
     flex-direction: column;
@@ -91,6 +99,7 @@ section {
     margin-bottom: 3rem;
 }
 
+/* Estilo do campo de entrada de pesquisa */
 section input {
     width: 30rem;
     border: none;
@@ -102,17 +111,18 @@ section input {
     box-sizing: border-box;
 }
 
+/* Estilo para a área de resultados da pesquisa */
 .resultados-pesquisa {
     width: 60rem;
     height: 46vh;
-    overflow-y: auto;
+    overflow-y: auto; 
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 0.6rem;
     font-family: 'Lexend Deca';
 }
 
-/* Animação de entrada para itens de resultado */
+/* Estilo para cada item de resultado */
 .item-resultado {
     background: #FFFFFF;
     border-radius: 0.6rem;
@@ -121,9 +131,10 @@ section input {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(20px);
-    animation: slideUp 0.5s forwards;
+    animation: slideUp 0.5s forwards; 
 }
 
+/* Animação de deslizamento para cima */
 @keyframes slideUp {
     to {
         opacity: 1;
@@ -131,6 +142,7 @@ section input {
     }
 }
 
+/* Animação de fade-in */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -140,27 +152,32 @@ section input {
     }
 }
 
+/* Estilo do título dentro de cada resultado */
 .item-resultado h2 {
     font-size: 1.5rem;
     color: #222831;
 }
 
+/* Estilo do link dentro do item de resultado */
 .item-resultado a {
     text-decoration: none;
     color: #f65a2a;
     text-transform: uppercase;
 }
 
+/* Efeito de hover para os links dos resultados */
 .item-resultado a:hover {
     text-decoration: underline;
 }
 
+/* Estilo para descrição adicional */
 .descricao-meta {
     color: #45474B;
     margin: 0.5rem 0;
     font-family: 'Lexend Deca';
 }
 
+/* Rodapé */
 footer {
     background-color: #f65a2a;
     color: #0f5224;
@@ -174,6 +191,7 @@ footer {
     text-transform: uppercase;
 }
 
+/* Responsividade para telas até 768px */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -195,6 +213,7 @@ footer {
     }
 }
 
+/* Responsividade para telas até 480px */
 @media (max-width: 480px) {
     h1 {
         font-size: 1.8rem;
@@ -223,6 +242,8 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+/* Responsividade adicional para layout do menu em telas menores */
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
