@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Livros por Mulheres</title>
 </head>
 <body>
     <header>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#inicio">início</a></li>
+                    <li><a href="#sobre">sobre</a></li>
+                    <li><a href="#autoras">autoras</a></li>
+                    <li><a href="#livros">livros</a></li>
+                    <li><a href="#contato">contato</a></li>
+                </ul>
+            </nav>
+        </header>
        <h1>livros por mulheres</h1> 
-    </header>
     <main>
         <section>  
-            <input type="text" placeholder="digite o nome do livro" id="campo-pesquisa">
-            <button onclick="pesquisar()">pesquisar</button>
+            <input type="text" placeholder="digite o nome da autora" id="campo-pesquisa">
+            <button onclick="pesquisar()" class="btn-pesquisa">pesquisar</button>
         </section>
         <section class="resultados-pesquisa" id="resultados-pesquisa"> 
         </section>
     </main>
     <footer>
         <p> 2024 - livros por mulheres. todos os direitos reservados.</p>
-        <p> entre em contato pelo e-mail: oieverllark@gmail.com </p>
     </footer>
     <script src="dados.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
+

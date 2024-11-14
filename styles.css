@@ -1,178 +1,232 @@
-/* Importa a fonte Cutive Mono do Google Fonts */
+/* Importa as fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono:ital,wght@0,400&display=swap');
-/* Importa a fonte Lexend Deca do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
-/* Estiliza o corpo da página */
-body {
-    font-family: "Cutive mono", sans-serif; /* Define a fonte padrão */
-    background-color: #b292e6; /* Cor de fundo da página */
-    display: flex; /* Usa Flexbox para layout */
-    flex-direction: column; /* Alinha os itens na vertical */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    height: 100vh; /* Preenche a altura total da viewport */
-    margin: 0; /* Remove a margem padrão */
-    padding: 0; /* Remove o padding padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estiliza os títulos h1 */
+body {
+    font-family: "Cutive mono", sans-serif;
+    background-color: #9b59b6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav {
+    background-color: #0f5224;
+    width: 100vw; 
+    padding: 1rem 0; 
+    display: flex;
+    justify-content: left;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem; 
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-family: 'Lexend Deca', sans-serif;
+    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.menu li a:hover {
+    color: #f65a2a; /* Cor de destaque no hover */
+}
+
+/* Animação para o título */
 h1 {
     font-size: 2.5rem;
-    color: #ffca2c; /* Amarelo para os títulos */
+    color: #f65a2a;
+    background-color: #0f5224;
+    width: 50vw;
     text-align: center;
     letter-spacing: 0.4rem;
-    background-color: #f037b6; /* Adiciona o fundo rosa claro */
-    padding: 10px; /* Adiciona um espaço interno para o texto */
-    border-radius: 10px;}
-
-/* Estiliza as seções da página */
-section {
-    display: flex; /* Usa Flexbox para layout */
-    flex-direction: column; /* Alinha os itens na vertical */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    margin-bottom: 3rem; /* Espaçamento abaixo de cada seção */
+    padding: 10px;
+    border-radius: 10px;
+    animation: fadeIn 2s ease;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
 }
 
-/* Estiliza os inputs dentro das seções */
-section input {
-    width: 30rem; /* Largura dos inputs */
-    border: none; /* Remove a borda padrão */
-    padding: 1rem; /* Espaçamento interno */
-    border-radius: 1.5rem; /* Borda arredondada */
-    margin-bottom: 1rem; /* Espaçamento abaixo dos inputs */
-    color: #93c9e6; /* Cor do texto */
-    font-size: 1rem; /* Tamanho da fonte */
-    box-sizing: border-box; /* Inclui padding e border na largura total */
-}
-
-/* Estiliza os botões dentro das seções */
-section button {
+/* Transição suave para os botões */
+section button, .btn-pesquisa {
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 1.5rem;
-    background-color: #f037b6; /* Rosa para os botões */
-    color: #F5F7F8;
+    background-color: #0f5224;
+    color: #fff;
     font-family: 'Lexend Deca';
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Adiciona efeito hover ao botão de pesquisa */
-section button:hover {
-    background-color: #93c9e6; /* Azul claro no hover */
+section button:hover, .btn-pesquisa:hover {
+    background-color: #f65a2a;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }
 
-/* Estiliza a caixa de resultados da pesquisa */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+section input {
+    width: 30rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+    color: #45474B;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
 .resultados-pesquisa {
-    width: 60rem; /* Largura máxima da caixa de resultados */
-    height: 46vh; /* Altura máxima da caixa de resultados */
-    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
-    margin-top: 1rem; /* Espaçamento acima da caixa de resultados */
-    padding: 1rem; /* Espaçamento interno */
-    border-radius: 0.6rem; /* Borda arredondada */
+    width: 60rem;
+    height: 46vh;
+    overflow-y: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
     font-family: 'Lexend Deca';
 }
 
-/* Estiliza cada item de resultado */
+/* Animação de entrada para itens de resultado */
 .item-resultado {
-    background: #FFFFFF; /* Cor de fundo dos itens */
-    border-radius: 0.6rem; /* Borda arredondada */
-    padding: 1rem; /* Espaçamento interno */
-    margin-bottom: 1rem; /* Espaçamento abaixo dos itens */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    background: #FFFFFF;
+    border-radius: 0.6rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.5s forwards;
 }
 
-/* Estiliza os títulos dentro dos itens de resultado */
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .item-resultado h2 {
-    font-size: 1.5rem; /* Tamanho da fonte */
-    color: #222831; /* Cor do texto */
+    font-size: 1.5rem;
+    color: #222831;
 }
 
-/* Estiliza os links dentro dos itens de resultado */
 .item-resultado a {
     text-decoration: none;
-    color: #ff5500; /* Laranja para os links*/
+    color: #f65a2a;
     text-transform: uppercase;
-    text-shadow: 2px 2px 8px #f037b6 (0, 0, 0, 0.5);
-  text-overflow: ellipsis; /
 }
 
-/* Estiliza os links quando são passados o mouse sobre */
 .item-resultado a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    text-decoration: underline;
 }
 
-/* Estiliza a descrição meta dentro dos itens de resultado */
 .descricao-meta {
-    color: #45474B; /* Cor do texto */
-    margin: 0.5rem 0; /* Margem acima e abaixo */
+    color: #45474B;
+    margin: 0.5rem 0;
     font-family: 'Lexend Deca';
 }
 
-/* Estiliza o rodapé da página */
 footer {
-    background-color: #ffca2c;
-    color: #45474B; /* Laranja para o texto do rodapé */
+    background-color: #f65a2a;
+    color: #0f5224;
     text-align: center;
     padding: 0;
     width: 100%;
     position: absolute;
     bottom: 0;
     font-size: 1rem;
-    font-family: 'Lexend Deca', sans-serif; /* Adiciona a fonte Lexend Deca */
-  text-transform: uppercase;
+    font-family: 'Lexend Deca', sans-serif;
+    text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem; /* Tamanho da fonte em telas menores */
-        letter-spacing: 0.2rem; /* Espaçamento entre letras em telas menores */
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
     }
 
     section input {
-        width: 25rem; /* Largura dos inputs em telas menores */
-        padding: 0.8rem; /* Espaçamento interno em telas menores */
+        width: 25rem;
+        padding: 0.8rem;
     }
 
     .resultados-pesquisa {
-        width: 40rem; /* Largura da caixa de resultados em telas menores */
-        height: 40vh; /* Altura da caixa de resultados em telas menores */
+        width: 40rem;
+        height: 40vh;
     }
 
     .item-resultado h2 {
-        font-size: 1.3rem; /* Tamanho da fonte dos títulos em telas menores */
+        font-size: 1.3rem;
     }
 }
 
-/* Responsividade para celulares */
 @media (max-width: 480px) {
-
     h1 {
-        font-size: 1.8rem; /* Tamanho da fonte em telas pequenas */
-        letter-spacing: 0.1rem; /* Espaçamento entre letras em telas pequenas */
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
     }
 
     section input {
-        width: 17rem; /* Largura total dos inputs em telas pequenas */
+        width: 17rem;
     }
 
     section button {
-        padding: 0.6rem 1rem; /* Espaçamento interno do botão em telas pequenas */
-        font-size: 0.9rem; /* Tamanho da fonte do botão em telas pequenas */
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 
     .resultados-pesquisa {
-        width: 90%; /* Largura da caixa de resultados em telas pequenas */
-        height: 50vh; /* Altura da caixa de resultados em telas pequenas */
+        width: 90%;
+        height: 50vh;
     }
 
     .item-resultado h2 {
-        font-size: 1.1rem; /* Tamanho da fonte dos títulos em telas pequenas */
+        font-size: 1.1rem;
     }
 
     footer {
-        font-size: 0.9rem; /* Tamanho da fonte do rodapé em telas pequenas */
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
     }
 }
