@@ -2,6 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono:ital,wght@0,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
+:root {
+    --cor00: #9b59b6;
+    --cor01: #0f5224;
+    --cor02: #f65a2a;
+    --cor03: #333333;
+    --cor04: #FFFFFF;
+    --fonte-padrao: 'Open Sans', sans-serif;
+}
+
 /* Reset de margens, espaçamentos e box-sizing */
 * {
     margin: 0;
@@ -12,7 +21,7 @@
 /* Estilização do corpo da página */
 body {
     font-family: "Cutive mono", sans-serif; 
-    background-color: #9b59b6; 
+    background-color: var(--cor00); 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,8 +34,8 @@ body {
 
 /* Barra de navegação */
 nav {
-    background-color: #0f5224;
-    width: 100vw; 
+    background-color: var(--cor01);
+    width: 100vw;
     padding: 1rem 0;
     display: flex;
     justify-content: left;
@@ -36,36 +45,36 @@ nav {
 .menu {
     list-style-type: none; 
     display: flex;
-    gap: 2rem; 
+    gap: 2rem;
 }
 
 /* Links do menu */
 .menu li a {
     text-decoration: none; 
-    color: #fff;
+    color: var(--cor04);
     font-size: 1.1rem;
     font-family: 'Lexend Deca', sans-serif;
-    transition: color 0.3s; 
+    transition: color 0.3s;
     padding: 0.5rem 1rem;
     border-radius: 8px;
 }
 
 /* Efeito de hover nos links do menu */
 .menu li a:hover {
-    color: #f65a2a; 
+    color: var(--cor02);
 }
 
 /* Estilo do título principal */
 h1 {
     font-size: 2.5rem;
-    color: #f65a2a;
-    background-color: #0f5224;
+    color: var(--cor02);
+    background-color: var(--cor01);
     width: 50vw;
     text-align: center;
     letter-spacing: 0.4rem; 
     padding: 10px;
     border-radius: 10px;
-    animation: fadeIn 2s ease; 
+    animation: fadeIn 2s ease;
     margin: auto;
     margin-top: 40px;
     margin-bottom: 50px;
@@ -76,8 +85,8 @@ section button, .btn-pesquisa {
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 1.5rem;
-    background-color: #0f5224;
-    color: #fff;
+    background-color: var(--cor01);
+    color: var(--cor04);
     font-family: 'Lexend Deca';
     font-size: 1rem;
     cursor: pointer;
@@ -86,9 +95,9 @@ section button, .btn-pesquisa {
 
 /* Efeito de hover nos botões */
 section button:hover, .btn-pesquisa:hover {
-    background-color: #f65a2a;
+    background-color: var(--cor02);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 /* Seção principal */
@@ -106,7 +115,7 @@ section input {
     padding: 1rem;
     border-radius: 1.5rem;
     margin-bottom: 1rem;
-    color: #45474B;
+    color:var(--cor03);
     font-size: 1rem;
     box-sizing: border-box;
 }
@@ -115,7 +124,7 @@ section input {
 .resultados-pesquisa {
     width: 60rem;
     height: 46vh;
-    overflow-y: auto; 
+    overflow-y: auto;
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 0.6rem;
@@ -124,14 +133,14 @@ section input {
 
 /* Estilo para cada item de resultado */
 .item-resultado {
-    background: #FFFFFF;
+    background: var(--cor04);
     border-radius: 0.6rem;
     padding: 1rem;
     margin-bottom: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(20px);
-    animation: slideUp 0.5s forwards; 
+    animation: slideUp 0.5s forwards;
 }
 
 /* Animação de deslizamento para cima */
@@ -155,13 +164,13 @@ section input {
 /* Estilo do título dentro de cada resultado */
 .item-resultado h2 {
     font-size: 1.5rem;
-    color: #222831;
+    color: var(--cor03);
 }
 
 /* Estilo do link dentro do item de resultado */
 .item-resultado a {
     text-decoration: none;
-    color: #f65a2a;
+    color: var(--cor02);
     text-transform: uppercase;
 }
 
@@ -172,15 +181,15 @@ section input {
 
 /* Estilo para descrição adicional */
 .descricao-meta {
-    color: #45474B;
+    color: var(--cor03);
     margin: 0.5rem 0;
     font-family: 'Lexend Deca';
 }
 
 /* Rodapé */
 footer {
-    background-color: #f65a2a;
-    color: #0f5224;
+    background-color: var(--cor02);
+    color: var(--cor01);
     text-align: center;
     padding: 0;
     width: 100%;
@@ -243,7 +252,7 @@ footer {
     }
 }
 
-/* Responsividade adicional para layout do menu em telas menores */
+/* Responsividade para layout do menu em telas menores */
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
