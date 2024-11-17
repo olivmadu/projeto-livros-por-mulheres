@@ -35,7 +35,7 @@ body {
 .hero {
     width: 100%;
     height: 70vh;
-    background-image: url('/imagens/elena-peb.jpg'); 
+    background-image: url('imagens/elena-peb.jpg'); 
     background-size: cover;
     background-position: center;
     display: flex;
