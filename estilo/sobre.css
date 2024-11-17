@@ -54,6 +54,10 @@ h1 {
     margin-top: 1em;
 }
 
+p {
+    text-align: justify;
+}
+
 /* Descrição do projeto */
 .descricao, .objetivos, .valores, .contato {
     background-color: var(--cor04);
