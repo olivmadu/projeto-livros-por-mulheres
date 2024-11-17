@@ -1,0 +1,89 @@
+/* Importa as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono:ital,wght@0,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+:root {
+    --cor00: #9b59b6; /* Roxo */
+    --cor01: #0f5224; /* Verde escuro */
+    --cor02: #f65a2a; /* Laranja */
+    --cor03: #333333; /* Cinza escuro */
+    --cor04: #FFFFFF; /* Branco */
+    --fonte-padrao: 'Lexend Deca', sans-serif;
+}
+/* Configurações gerais */
+body {
+    font-family: var(--fonte-padrao);
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor00);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Cabeçalho da página de resultados */
+header {
+    width: 100%;
+    background-color: var(--cor02);
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--cor01);
+    font-size: 2rem;
+}
+
+/* Seção de Resultados */
+.resultados-pesquisa {
+    max-width: 800px;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Estilo de cada item de resultado */
+.item-resultado {
+    background-color: var(--cor04);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-resultado h2 {
+    font-size: 1.5rem;
+    color: var(--cor03);
+}
+
+.item-resultado a {
+    text-decoration: none;
+    color: var(--cor01);
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.item-resultado a:hover {
+    color: var(--cor00); 
+}
+
+.descricao-meta {
+    color: #666666;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+/* Rodapé da página de resultados */
+footer {
+    width: 100%;
+    background-color: var(--cor02);
+    color: var(--cor01);
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+}

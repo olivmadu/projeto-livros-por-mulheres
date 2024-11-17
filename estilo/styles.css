@@ -1,0 +1,323 @@
+/* Importa as fontes do Google Fonts */
+/* Importa as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono:ital,wght@0,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+:root {
+    --cor00: #9b59b6; /* Roxo */
+    --cor01: #0f5224; /* Verde escuro */
+    --cor02: #f65a2a; /* Laranja */
+    --cor03: #333333; /* Cinza escuro */
+    --cor04: #FFFFFF; /* Branco */
+    --fonte-padrao: 'Lexend Deca', sans-serif;
+}
+
+/* Reset de margens, espaçamentos e box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: "Cutive Mono", sans-serif;
+    background-color: var(--cor00);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    padding-top:80px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Seção de imagem de fundo */
+.hero {
+    width: 100%;
+    height: 70vh;
+    background-image: url('/imagens/elena-peb.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor04);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding-top: 0;
+}
+
+/* Navegação */
+nav {
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0;
+    padding-top: 30px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.menu li a {
+    text-decoration: underline;
+    color: var(--cor04);
+    font-size: 1.1rem;
+    font-family: var(--fonte-padrao);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.menu li a:hover {
+    color: var(--cor01);
+    background-color: var(--cor02);
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: var(--fonte-padrao);
+    letter-spacing: 0.2rem;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cor02);
+    border-radius: 7px;
+    margin-bottom: 30px;
+}
+
+/* Seção de pesquisa */
+.pesquisa {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: var(--cor01);
+    padding: 50px;
+    border-radius: 8px;
+}
+
+.select-tipo-pesquisa {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-family: var(--fonte-padrao);
+    font-size: 1rem;
+    color: var(--cor03);
+    background-color: var(--cor04);
+    cursor: pointer;
+}
+
+.pesquisa input {
+    width: 30rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 1.5rem;
+    color: var(--cor03);
+    font-size: 1rem;
+    margin: auto;
+}
+
+.btn-pesquisa {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: var(--cor04);
+    color: var(--cor03);
+    font-family: var(--fonte-padrao);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-pesquisa:hover {
+    background-color: var(--cor02);
+}
+
+/* Cards em grade */
+.card-unificada {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-item {
+    background-color: var(--cor04);
+    color: var(--cor03);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.autora-img, .livro-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--cor03);
+}
+
+.card-item p {
+    font-size: 1rem;
+    color: var(--cor03);
+    margin-bottom: 15px;
+}
+
+.card-item a {
+    text-decoration: none;
+    color: var(--cor01);
+    font-weight: bold;
+}
+
+.card-item a:hover {
+    color: var(--cor02);
+}
+
+
+/* Rodapé */
+footer {
+    background-color: var(--cor02);
+    color: var(--cor01);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: var(--fonte-padrao);
+}
+
+
+/* Responsividade para telas até 768px */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 60vh;
+    }
+    nav {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        padding: 1rem 0;
+        background-color: var(--cor01);
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem; 
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        text-align: center;
+    }
+
+    .menu li a {
+        font-size: 1rem; 
+        padding: 0.5rem 1rem;
+        text-decoration: none; 
+        color: var(--cor04);
+        border-radius: 5px; 
+        padding: 10px;
+    }
+
+    .menu li a:hover {
+        color: var(--cor04);
+    }
+
+    .pesquisa input {
+        width: 100%;
+    }
+
+    .grade {
+        padding: 10px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+/* Responsividade para telas até 480px */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .menu li a {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte em telas pequenas */
+        padding: 0.4rem 0.8rem; /* Ajusta o espaçamento interno dos links */
+    }
+
+    nav {
+        padding: 0.8rem 0;
+    }
+
+    .pesquisa input {
+        width: 100%;
+    }
+
+
+    .hero {
+        height: 50vh;
+    }
+
+    .btn-pesquisa {
+        width: 100%;
+    }
+
+    .grade {
+        padding: 5px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
