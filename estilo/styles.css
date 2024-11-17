@@ -35,7 +35,7 @@ body {
 .hero {
     width: 100%;
     height: 70vh;
-    background-image: url('/elena-peb.jpg');
+    background-image: url('/projeto-livros-por-mulheres/elena-peb.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
