@@ -10,7 +10,7 @@ const citacoes = [
         link: "https://pt.wikipedia.org/wiki/Clarice_Lispector"
     },
     {
-        texto: 'Eu sou minha mãe, e minha mãe é eu.',
+        texto: '"As mulheres, durante séculos, serviram de espelho aos homens por possuírem o poder mágico e delicioso de refletirem uma imagem do homem duas vezes maior que o natural."',
         autor: "Virginia Woolf",
         link: "https://pt.wikipedia.org/wiki/Virginia_Woolf"
     },

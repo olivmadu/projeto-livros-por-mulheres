@@ -11,10 +11,10 @@
     <header>
         <nav>
             <ul class="menu">
-                <li><a href="#inicio">início</a></li>
-                <li><a href="#sobre">sobre o projeto</a></li>
-                <li><a href="#autoras">autoras</a></li>
-                <li><a href="#livros">livros</a></li>
+                <li><a href="index.html">início</a></li>
+                <li><a href="sobre.html">sobre o projeto</a></li>
+                <li><a href="autoras.html">autoras</a></li>
+                <li><a href="livros.html">livros</a></li>
                 <li><a href="#contato">contate-nos</a></li>
             </ul>
         </nav>
@@ -35,7 +35,7 @@
                 <option value="autoras">autora</option>
             </select>
             <input type="text" placeholder="digite o nome do livro ou autora" id="campo-pesquisa">
-            <button class="btn-pesquisa">pesquisar</button>
+            <button class="btn-pesquisa" onclick="pesquisar()">pesquisar</button>
         </section>
 
         <!-- Seção Unificada: Autoras, Livros e Citações -->
@@ -74,9 +74,9 @@
                 <div class="card-item">
                     <h3>citações em destaque</h3>
                     <p>"Não se nasce mulher: torna-se." - Simone de Beauvoir</p>
-                    <p> "Eu sou minha mãe, e minha mãe é eu." - Virginia Woolf
+                    <p> "As mulheres, durante séculos, serviram de espelho aos homens por possuírem o poder mágico e delicioso de refletirem uma imagem do homem duas vezes maior que o natural." - Virginia Woolf
                     </p>
-                    <button>Próxima citação</button>
+                    <button>mais citações</button>
                 </div>
             </div>
         </section>
@@ -86,7 +86,7 @@
     <footer>
         <p>2024 - mulheres em escrito. todos os direitos reservados.</p>
     </footer>
-
+    <script src="/js/resultados.js"></script>
     <script src="/js/dados.js"></script>
     <script src="/js/app.js"></script>
 </body>

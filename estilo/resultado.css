@@ -10,29 +10,63 @@
     --cor04: #FFFFFF; /* Branco */
     --fonte-padrao: 'Lexend Deca', sans-serif;
 }
+
 /* Configurações gerais */
-body {
-    font-family: var(--fonte-padrao);
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: var(--fonte-padrao);
     background-color: var(--cor00);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* Cabeçalho da página de resultados */
+/* Cabeçalho e Navegação */
 header {
     width: 100%;
-    background-color: var(--cor02);
-    padding: 1rem;
-    text-align: center;
+    background-color: var(--cor01);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-header h1 {
-    color: var(--cor01);
-    font-size: 2rem;
+header .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem;
+    margin: 0;
+}
+
+header .menu li a {
+    text-decoration: none;
+    color: var(--cor04);
+    font-size: 1.2rem;
+}
+
+header .menu li a:hover {
+    color: var(--cor02);
+}
+
+/* Área principal (main) */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem; /* Compensa a altura do cabeçalho fixo */
+}
+
+/* Título */
+h1 {
+    font-size: 2.5rem;
+    color: var(--cor04);
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 /* Seção de Resultados */
@@ -52,38 +86,46 @@ header h1 {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.item-resultado img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
 
 .item-resultado h2 {
     font-size: 1.5rem;
     color: var(--cor03);
+    margin-bottom: 0.5rem;
+}
+
+.item-resultado p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
 }
 
 .item-resultado a {
     text-decoration: none;
     color: var(--cor01);
     font-weight: bold;
-    display: inline-block;
-    margin-top: 0.5rem;
 }
 
 .item-resultado a:hover {
-    color: var(--cor00); 
+    color: var(--cor02);
 }
 
-.descricao-meta {
-    color: #666666;
-    margin: 0.5rem 0;
-    font-size: 1rem;
-}
-
-/* Rodapé da página de resultados */
+/* Rodapé */
 footer {
     width: 100%;
     background-color: var(--cor02);
     color: var(--cor01);
     text-align: center;
     padding: 1rem;
-    position: absolute;
-    bottom: 0;
+    margin-top: auto;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }

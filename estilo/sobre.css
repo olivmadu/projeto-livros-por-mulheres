@@ -1,0 +1,106 @@
+/* Importa as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300..900&display=swap');
+
+:root {
+    --cor00: #9b59b6; /* Roxo */
+    --cor01: #0f5224; /* Verde escuro */
+    --cor02: #f65a2a; /* Laranja */
+    --cor03: #333333; /* Cinza escuro */
+    --cor04: #FFFFFF; /* Branco */
+    --fonte-padrao: 'Lexend Deca', sans-serif;
+}
+
+/* Configurações gerais */
+body {
+    font-family: var(--fonte-padrao);
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor00);
+    color: var(--cor04);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor01);
+    padding: 1rem;
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: var(--cor04);
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: var(--cor02);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    margin-top: 1em;
+}
+
+/* Descrição do projeto */
+.descricao, .objetivos, .valores, .contato {
+    background-color: var(--cor04);
+    color: var(--cor03);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.descricao h2, .objetivos h2, .valores h2, .contato h2 {
+    color: var(--cor00);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.descricao p, .objetivos ul, .valores p, .contato p {
+    font-size: 1.2rem;
+}
+
+/* Lista de objetivos */
+.objetivos ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.objetivos li {
+    margin-bottom: 0.8rem;
+}
+
+/* Contato */
+.contato a {
+    color: var(--cor02);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contato a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor02);
+    color: var(--cor04);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+}

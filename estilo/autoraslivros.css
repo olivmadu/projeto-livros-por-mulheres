@@ -1,0 +1,169 @@
+/* Importa as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono:ital,wght@0,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+:root {
+    --cor00: #9b59b6; /* Roxo */
+    --cor01: #0f5224; /* Verde escuro */
+    --cor02: #f65a2a; /* Laranja */
+    --cor03: #333333; /* Cinza escuro */
+    --cor04: #FFFFFF; /* Branco */
+    --fonte-padrao: 'Lexend Deca', sans-serif;
+}
+/* Estilo básico */
+body {
+    font-family: var(--fonte-padrao);
+    background-color: var(--cor00);
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--cor01);
+    padding: 1rem;
+    text-align: center;
+}
+
+header .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+header .menu li a {
+    text-decoration: none;
+    color: var(--cor04);
+    font-size: 1.2rem;
+}
+
+header .menu li a:hover {
+    color: var(--cor02);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: var(--cor04);
+    margin: 20px 0;
+}
+
+/* Lista de autoras */
+.lista-autoras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-autora {
+    background-color: var(--cor04);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-autora:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-autora img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.card-autora h2 {
+    font-size: 1.5rem;
+    color: var(--cor03);
+    margin-bottom: 10px;
+}
+
+.card-autora p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-autora a {
+    text-decoration: none;
+    color: var(--cor01);
+    font-weight: bold;
+}
+
+
+.card-autora a:hover {
+    color: var(--cor02);
+}
+
+.lista-livros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px; 
+}
+
+.card-livro {
+    background-color: var(--cor04);
+    color: var(--cor03);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-livro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.livro-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-livro h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--cor03);
+}
+
+.card-livro p {
+    font-size: 1rem;
+    color: var(--cor03);
+    margin-bottom: 15px;
+}
+
+.card-livro a {
+    text-decoration: none;
+    color: var(--cor01);
+    font-weight: bold;
+}
+
+.card-livro a:hover {
+    color: var(--cor02);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor02);
+    color: var(--cor01);
+    text-align: center;
+    padding: 1rem;
+}
