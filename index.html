@@ -1,95 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livros por Mulheres</title>
-    <link rel="stylesheet" href="estilo/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página inicial</title>
+  <link rel="stylesheet" href="estilo/styles.css">
+  <!-- Importação das fontes -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cutive+Mono:ital,wght@0,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap">
 </head>
 <body>
-    <!-- Navegação principal -->
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">início</a></li>
-                <li><a href="sobre.html">sobre o projeto</a></li>
-                <li><a href="autoras.html">autoras</a></li>
-                <li><a href="livros.html">livros</a></li>
-                <li><a href="#contato">contate-nos</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Navegação principal -->
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">início</a></li>
+        <li><a href="sobre.html">sobre o projeto</a></li>
+        <li><a href="autoras.html">autoras</a></li>
+        <li><a href="livros.html">livros</a></li>
+        <li><a href="#contato">contate-nos</a></li>
+      </ul>
+    </nav>
 
-    <!-- Seção de imagem de fundo no topo -->
-    <section class="hero">
+  </header>
+
+  <!-- Seção de imagem de fundo -->
+  <section class="hero">
+    <div class="typewriter">
+        <h1 id="typewriter-text"></h1>
+  </section>
+
+  <!-- Conteúdo Principal -->
+  <main>
+
+    <!-- pesquisa -->
+    <section class="pesquisa">
+      <select id="tipo-pesquisa" class="select-tipo-pesquisa">
+        <option value="livros">livro</option>
+        <option value="autoras">autora</option>
+      </select>
+      <input type="text" placeholder="digite o nome do livro ou autora" id="campo-pesquisa">
+      <button class="btn-pesquisa" onclick="pesquisar()">pesquisar</button>
     </section>
 
-    <!-- Conteúdo Principal -->
-    <main>
-        <h1>mulheres em escrito</h1>
+    <!-- autoras -->
+    <section class="autoras">
+      <h2>autoras em destaque</h2>
+      <div class="card-container">
+        <!--  cards via JavaScript -->
+      </div>
+    </section>
 
-        <!-- Seção de Pesquisa -->
-        <section class="pesquisa">
-            <select id="tipo-pesquisa" class="select-tipo-pesquisa">
-                <option value="livros">livro</option>
-                <option value="autoras">autora</option>
-            </select>
-            <input type="text" placeholder="digite o nome do livro ou autora" id="campo-pesquisa">
-            <button class="btn-pesquisa" onclick="pesquisar()">pesquisar</button>
-        </section>
+    <!-- livros -->
+    <section class="livros">
+      <h2>livros em destaque</h2>
+      <div class="card-container">
+        <!-- cards via JavaScript -->
+      </div>
+    </section>
 
-        <!-- Seção Unificada: Autoras, Livros e Citações -->
-        <section class="card-unificada">
-           
-            <div class="card-container">
-                <!-- Autora 1 -->
-                <div class="card-item">
-                    <h2>autoras em destaque</h2>
-                    <img src="imagens/clarice.jpg" alt="Clarice Lispector" class="autora-img">
-                    <h3>clarice lispector</h3>
-                    <p>Clarice Lispector foi uma das escritoras mais importantes do Brasil, conhecida por sua prosa introspectiva.</p>
-                    <a href="resultados.html?termo=Clarice%20Lispector&tipo=autoras" target="_blank">Saiba mais</a><br>
+    <!-- citações -->
+    <section class="citacoes-container">
+      <h2>citações em destaque</h2>
+      <div class="card-container">
+        <!-- cards via JavaScript -->
+      </div>
+    </section>
+  </main>
 
-                    <img src="imagens/simone.jpg" alt="simone de beauvoir" class="autora-img">
-                    <h3>simone de beauvoir</h3>
-                    <p>filósofa e escritora francesa, conhecida por sua obra 'O Segundo Sexo'.</p>
-                    <a href="https://pt.wikipedia.org/wiki/Simone_de_Beauvoir" target="_blank">Saiba mais</a>
-                    
-                </div>
+  <!-- modal para exibir detalhes -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h2 id="modal-titulo">título</h2>
+      <p id="modal-descricao">descrição detalhada.</p>
+    </div>
+  </div>
 
-                <!-- Livro 1 -->
-                <div class="card-item">
-                    <h3>livro em destaque</h3>
-                    <img src="imagens/a_hora_da_estrela.jpg" alt="A Hora da Estrela" class="livro-img">
-                    <h3>a hora da estrela</h3>
-                    <p>Uma das obras mais conhecidas de Clarice Lispector, que explora temas como identidade e sofrimento humano.</p>
-                    <a href="resultados.html?termo=A%20Hora%20da%20Estrela&tipo=livros" target="_blank">Saiba mais</a> <br>
-                    <img src="imagens/o_segundo_sexo.jpg" alt="O segundo sexo" class="livro-img">
-                    <h3>o segundo sexo</h3>
-                    <p>obra fundamental de Simone de Beauvoir, uma análise profunda sobre a condição feminina.</p>
-                    <a href="https://pt.wikipedia.org/wiki/O_Segundo_Sexo" target="_blank">Saiba mais</a>
-                </div>
+<!-- botão topo -->
+<button id="voltar-topo" title="voltar ao topo">↑</button>
 
-                <!-- Citação 1 -->
-                <div class="card-item">
-                    <h3>citações em destaque</h3>
-                    <p>"Não se nasce mulher: torna-se." - Simone de Beauvoir</p>
-                    <p> "As mulheres, durante séculos, serviram de espelho aos homens por possuírem o poder mágico e delicioso de refletirem uma imagem do homem duas vezes maior que o natural." - Virginia Woolf
-                    </p>
-                    <button>mais citações</button>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- Seção "Sobre Nós" com imagem e texto lado a lado -->
+<section id="sobre-nos" class="sobre-nos fade-in">
+  <div class="sobre-nos-container">
+    <!-- Área da imagem -->
+    <div class="sobre-nos-imagem">
+      <img src="imagens/women.jpg" alt="Sobre Nós">
+    </div>
+    <!-- Área do texto -->
+    <div class="sobre-nos-texto">
+      <h2>Sobre Nós</h2>
+      <p>
+        Nosso projeto celebra a literatura escrita por mulheres, divulgando obras que inspiram e promovem a diversidade cultural.
+        Descubra histórias e trajetórias que mudaram a forma de ver o mundo.
+      </p>
+      <button onclick="window.location.href='sobre.html'">Sobre o Projeto</button>
+    </div>
+  </div>
+</section>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>2024 - mulheres em escrito. todos os direitos reservados.</p>
-    </footer>
-    <script src="js/resultados.js"></script>
-    <script src="js/dados.js"></script>
-    <script src="js/app.js"></script>
+</main>
+
+  <!-- rodapé -->
+  <footer id="contato">
+    <p>2024 - mulheres em escrito. todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
+
+
 
 

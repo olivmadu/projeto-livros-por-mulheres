@@ -1,25 +1,43 @@
-// Função para exibir todas as autoras
-function exibirTodasAsAutoras() {
-    const listaAutoras = document.getElementById("lista-autoras");
 
-    // Limpa a seção (se necessário)
-    listaAutoras.innerHTML = "";
+function exibirAutoras(lista) {
+    const container = document.getElementById('lista-autoras');
+    container.innerHTML = ""; 
+    lista.forEach(autora => {
+        const card = document.createElement("div");
 
-    // Itera sobre o array de autoras para criar os cards
-    autoras.forEach(autora => {
-        const div = document.createElement("div");
-        div.classList.add("card-autora");
-
-        div.innerHTML = `
-            <img src="${autora.imagem}" alt="${autora.nome}">
+        card.classList.add("card-autora", "fade-in");
+        card.innerHTML = `
+            <img src="${autora.imagem}" alt="${autora.titulo}">
             <h2>${autora.titulo}</h2>
             <p>${autora.descricao}</p>
             <a href="${autora.link}" target="_blank">Saiba mais</a>
         `;
+        container.appendChild(card);
+    });
 
-        listaAutoras.appendChild(div);
+    const cards = document.querySelectorAll('.card-autora.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => {
+        observer.observe(card);
     });
 }
 
-// Chama a função ao carregar a página
-document.addEventListener("DOMContentLoaded", exibirTodasAsAutoras);
+
+exibirAutoras(autoras);
+
+
+document.getElementById("filtro-autoras").addEventListener("input", function() {
+    const termo = this.value.toLowerCase();
+    const autorasFiltradas = autoras.filter(autora => 
+        autora.titulo.toLowerCase().includes(termo)
+    );
+    exibirAutoras(autorasFiltradas);
+});

@@ -1,26 +1,43 @@
-// Função para exibir todos os livros
-function exibirTodosOsLivros() {
-    const listaLivros = document.getElementById("lista-livros");
 
-    // Limpa a seção (se necessário)
-    listaLivros.innerHTML = "";
+function exibirLivros(lista) {
+    const container = document.getElementById('lista-livros');
+    container.innerHTML = ""; 
 
-    // Itera sobre o array de livros para criar os cards
-    livros.forEach(livro => {
-        const div = document.createElement("div");
-        div.classList.add("card-livro");
-
-        // Adiciona a imagem, o título, a descrição e o link
-        div.innerHTML = `
+    lista.forEach(livro => {
+        const card = document.createElement("div");
+        card.classList.add("card-livro", "fade-in");
+        card.innerHTML = `
             <img src="${livro.imagem}" alt="${livro.titulo}" class="livro-img">
             <h2>${livro.titulo}</h2>
             <p>${livro.descricao}</p>
             <a href="${livro.link}" target="_blank">Saiba mais</a>
         `;
+        container.appendChild(card);
+    });
 
-        listaLivros.appendChild(div);
+    const cards = document.querySelectorAll('.card-livro.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => {
+        observer.observe(card);
     });
 }
 
-// Chama a função ao carregar a página
-document.addEventListener("DOMContentLoaded", exibirTodosOsLivros);
+document.addEventListener("DOMContentLoaded", function() {
+    exibirLivros(livros);
+});
+
+document.getElementById("filtro-livros").addEventListener("input", function() {
+    const termo = this.value.toLowerCase();
+    const livrosFiltrados = livros.filter(livro =>
+        livro.titulo.toLowerCase().includes(termo)
+    );
+    exibirLivros(livrosFiltrados);
+});

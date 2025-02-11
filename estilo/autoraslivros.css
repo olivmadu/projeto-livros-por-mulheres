@@ -10,6 +10,7 @@
     --cor04: #FFFFFF; /* Branco */
     --fonte-padrao: 'Lexend Deca', sans-serif;
 }
+
 /* Estilo básico */
 body {
     font-family: var(--fonte-padrao);
@@ -43,15 +44,31 @@ header .menu li a:hover {
     color: var(--cor02);
 }
 
-/* Título */
+/* Título Principal */
 h1 {
     text-align: center;
     color: var(--cor04);
     margin: 20px 0;
 }
 
-/* Lista de autoras */
-.lista-autoras {
+/* Campo de filtro */
+.filtro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filtro input {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+/* Seções para listas (autoras e livros) */
+.lista-autoras,
+.lista-livros {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -59,6 +76,7 @@ h1 {
     padding: 20px;
 }
 
+/* Estilo dos cards de autoras */
 .card-autora {
     background-color: var(--cor04);
     border-radius: 8px;
@@ -100,19 +118,11 @@ h1 {
     font-weight: bold;
 }
 
-
 .card-autora a:hover {
     color: var(--cor02);
 }
 
-.lista-livros {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px; 
-}
-
+/* Estilo dos cards de livros */
 .card-livro {
     background-color: var(--cor04);
     color: var(--cor03);
@@ -166,4 +176,32 @@ footer {
     color: var(--cor01);
     text-align: center;
     padding: 1rem;
+}
+
+/* Animação Fade-In para os cards */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filtro input {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    .card-autora, .card-livro {
+        width: 90%;
+    }
 }
