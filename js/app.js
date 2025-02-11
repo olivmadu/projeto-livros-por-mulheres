@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  const texto = "bem-vinda ao mundo escrito por mulheres";
+  const texto = "bem-vinda a um mundo escrito por mulheres";
   const elemento = document.getElementById("typewriter-text");
   let index = 0;
   
