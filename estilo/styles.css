@@ -5,7 +5,7 @@
   :root {
     --cor00: #9c78c8;
     --cor01: #0f5224; 
-    --cor02: #f65a2a; 
+    --cor02: #aa320d; 
     --cor03: #333333; 
     --cor04: #FFFFFF; 
     --cor05: #ede7e7; 
@@ -23,7 +23,6 @@
 /* Corpo da página */
 body {
   font-family: "Cutive Mono", sans-serif;
-  background-color: var(--cor00);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +63,7 @@ header nav {
 }
 
 .menu li a {
-  text-decoration: underline;
+  text-decoration: none;
   color: var(--cor01);
   font-size: 1.1rem;
   font-family: var(--fonte-padrao);
@@ -74,6 +73,7 @@ header nav {
 
 .menu li a:hover {
   color: var(--cor02);
+  text-decoration: underline;
   
 }
 
@@ -82,7 +82,7 @@ header nav {
   position: relative;
   width: 100%;
   height: 70vh;
-  background-image: url(../imagens/capa.png);
+  background-image: url(../imagens/capa1.png);
   background-size: cover;
   background-position: center;
 }
@@ -104,7 +104,7 @@ header nav {
   animation: caret 0.75s steps(1) infinite;
 }
 
-/* Animação do cursor (piscar) */
+/* Animação do cursor */
 @keyframes caret {
   50% { border-color: transparent; }
 }
@@ -114,7 +114,7 @@ header nav {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 20px 0;
+  margin: 15px 0;
   background-color: var(--cor01);
   padding: 50px;
   border-radius: 8px;

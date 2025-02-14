@@ -2,64 +2,199 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300..900&display=swap');
 
 :root {
-    --cor00: #9b59b6; /* Roxo */
-    --cor01: #0f5224; /* Verde escuro */
-    --cor02: #f65a2a; /* Laranja */
-    --cor03: #333333; /* Cinza escuro */
-    --cor04: #FFFFFF; /* Branco */
-    --fonte-padrao: 'Lexend Deca', sans-serif;
+    --cor00: #9c78c8;
+    --cor01: #0f5224; 
+    --cor02: #aa320d; 
+    --cor03: #333333; 
+    --cor04: #FFFFFF; 
+    --cor05: #ede7e7; 
+  --fonte-padrao: 'Lexend Deca', sans-serif;
 }
 
 /* Configurações gerais */
 body {
-    font-family: var(--fonte-padrao);
-    margin: 0;
-    padding: 0;
-    background-color: var(--cor00);
-    color: var(--cor04);
-    line-height: 1.6;
-}
-
-/* Cabeçalho */
-header {
-    background-color: var(--cor01);
-    padding: 1rem;
-    text-align: center;
-}
-
-.menu {
+    font-family: "Cutive Mono", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    background-image: url('../imagens/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Navegação */
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--cor05);
+    padding: 0.3rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .logo-container {
+    margin-left: 20px;
+  }
+  
+  .logo-container .logo {
+    max-height: 50px; 
+    height: auto;
+  }
+  
+  .menu {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
-}
-
-.menu li a {
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .menu li a {
     text-decoration: none;
-    color: var(--cor04);
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-.menu li a:hover {
+    color: var(--cor01);
+    font-size: 1.1rem;
+    font-family: var(--fonte-padrao);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+  
+  .menu li a:hover {
     color: var(--cor02);
-}
+    text-decoration: underline;
+    
+  }
 
-h1 {
+  h1 {
     font-size: 2.5rem;
+    color: var(--cor04);
     font-weight: bold;
-    margin: 0;
     text-align: center;
-    margin-top: 1em;
+    margin: 3em auto 1em;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--cor00);
 }
 
 p {
     text-align: justify;
 }
 
-/* Descrição do projeto */
-.descricao, .objetivos, .valores, .contato {
+/*linha do tempo*/
+.timeline-intro {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--cor05);
+  border-radius: 8px;
+  color: var(--cor03);
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.timeline {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--cor04);
+  border-radius: 8px;
+  color: var(--cor03);
+}
+
+.timeline h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--cor03);
+}
+
+.timeline-container {
+  position: relative;
+  padding: 40px 0;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: var(--cor01);
+  transform: translateX(-50%);
+}
+
+.timeline-century {
+  position: relative;
+  margin: 40px 0;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.timeline-century.left .century-marker {
+  position: absolute;
+  top: 0;
+  right: calc(50% + 20px);
+}
+
+.timeline-century.right .century-marker {
+  position: absolute;
+  top: 0;
+  left: calc(50% + 20px);
+}
+
+.century-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: var(--cor00);
+  color: var(--cor04);
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  border: 4px solid var(--cor01);
+  transition: background-color 0.3s;
+  font-size: 1rem;
+}
+
+.century-marker:hover {
+  background-color: var(--cor01);
+}
+
+.century-content {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--cor05);
+  border-radius: 8px;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-century.active .century-content {
+  display: block;
+}
+
+.century-content ul {
+  list-style: disc inside;
+  padding-left: 20px;
+}
+
+.century-content li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: var(--cor03);
+  line-height: 1.4;
+}
+
+.descricao, .objetivos, .contato {
     background-color: var(--cor04);
     color: var(--cor03);
     border-radius: 10px;
@@ -69,27 +204,48 @@ p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.descricao h2, .objetivos h2, .valores h2, .contato h2 {
-    color: var(--cor00);
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.descricao h2,
+.objetivos h2,
+.contato h2 {
+  color: var(--cor01);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--cor02);
+  padding-bottom: 0.5rem;
 }
 
-.descricao p, .objetivos ul, .valores p, .contato p {
-    font-size: 1.2rem;
+.descricao p,
+.objetivos ul,
+.contato p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--cor03);
+  margin: 0 0 1rem;
 }
 
-/* Lista de objetivos */
 .objetivos ul {
-    list-style: disc;
-    padding-left: 1.5rem;
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .objetivos li {
-    margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
-/* Contato */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .contato a {
     color: var(--cor02);
     text-decoration: none;
@@ -103,10 +259,28 @@ p {
 /* Rodapé */
 footer {
     background-color: var(--cor02);
-    color: var(--cor01);
+    color: var(--cor04);
     text-align: center;
     padding: 1rem;
     width: 100%;
     font-size: 1rem;
     font-family: var(--fonte-padrao);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .timeline-item {
+    width: 100%;
+    padding: 20px 20px;
+  }
+  .timeline-item.left, .timeline-item.right {
+    left: 0;
+    text-align: left;
+  }
+  .timeline-container::after {
+    left: 20px;
+  }
+  .timeline-item::after {
+    left: 10px;
+  }
 }

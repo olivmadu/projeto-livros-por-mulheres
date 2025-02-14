@@ -9,12 +9,17 @@
 <body>
   <header>
     <nav>
+      <div class="logo-container">
+        <a href="index.html">
+          <img src="/imagens/logo.png" alt="Logo do Site" class="logo">
+        </a>
+      </div>
       <ul class="menu">
         <li><a href="index.html">início</a></li>
         <li><a href="sobre.html">sobre o projeto</a></li>
         <li><a href="autoras.html">autoras</a></li>
         <li><a href="livros.html">livros</a></li>
-        <li><a href="contato.html">contate-nos</a></li>
+        <li><a href="#contato">contate-nos</a></li>
       </ul>
     </nav>
   </header>
@@ -22,14 +27,57 @@
   <main>
     <h1>Autoras</h1>
 
-    <section class="filtro">
+    <section class="destaques fade-in">
+      <h2>autoras em destaque</h2>
+      <div class="carousel">
+        <div class="carousel-item" data-id="1">
+          <img src="imagens/clarice.jpg" alt="Clarice Lispector">
+          <h3>clarice lispector</h3>
+        </div>
+        <div class="carousel-item" data-id="2">
+          <img src="imagens/simone.jpg" alt="Simone de Beauvoir">
+          <h3>simone de beauvoir</h3>
+        </div>
+        <div class="carousel-item" data-id="3">
+          <img src="imagens/virginia.jpg" alt="Virginia Woolf">
+          <h3>virginia wolf</h3>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="filtros-avancados fade-in">
+      <h2>filtrar por categoria</h2>
+      <div class="filtros">
+        <button class="filtro-btn active" data-category="todas">todas</button>
+        <button class="filtro-btn" data-category="romance">romance</button>
+        <button class="filtro-btn" data-category="poesia">poesia</button>
+        <button class="filtro-btn" data-category="drama">drama</button>
+        <button class="filtro-btn" data-category="fantasia">fantasia</button>
+      </div>
+    </section>
+
+
+    <section class="filtro fade-in">
       <input type="text" id="filtro-autoras" placeholder="Pesquise uma autora...">
     </section>
 
-    <section class="lista-autoras" id="lista-autoras">
- 
+
+    <section class="lista-autoras fade-in" id="lista-autoras">
+      <!-- Os cards serão inseridos via JavaScript -->
     </section>
   </main>
+
+
+  <div id="modal-autora" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-titulo">título da autora</h2>
+      <p id="modal-descricao">Informações adicionais sobre a autora...</p>
+      <a id="modal-link" href="#" target="_blank">Saiba mais</a>
+    </div>
+  </div>
 
   <footer>
     <p>2024 - mulheres por escrito. todos os direitos reservados.</p>
@@ -37,5 +85,7 @@
 
   <script src="js/autoras.js"></script>
   <script src="js/exibirautoras.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/carousel.js"></script>
 </body>
 </html>

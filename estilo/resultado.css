@@ -3,54 +3,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
 :root {
-    --cor00: #9b59b6; /* Roxo */
-    --cor01: #0f5224; /* Verde escuro */
-    --cor02: #f65a2a; /* Laranja */
-    --cor03: #333333; /* Cinza escuro */
-    --cor04: #FFFFFF; /* Branco */
-    --fonte-padrao: 'Lexend Deca', sans-serif;
+    --cor00: #9c78c8;
+    --cor01: #0f5224; 
+    --cor02: #aa320d; 
+    --cor03: #333333; 
+    --cor04: #FFFFFF; 
+    --cor05: #ede7e7; 
+  --fonte-padrao: 'Lexend Deca', sans-serif;
 }
 
 /* Configurações gerais */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: var(--fonte-padrao);
-    background-color: var(--cor00);
+body {
+    font-family: "Cutive Mono", sans-serif;
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
-}
-
-/* Cabeçalho e Navegação */
-header {
+    background-image: url('../imagens/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Navegação */
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    background-color: var(--cor01);
+    background-color: var(--cor05);
+    padding: 0.3rem 1rem;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-}
-
-header .menu {
+  }
+  
+  .logo-container {
+    margin-left: 20px;
+  }
+  
+  .logo-container .logo {
+    max-height: 50px; 
+    height: auto;
+  }
+  
+  .menu {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 1rem;
-    margin: 0;
-}
-
-header .menu li a {
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .menu li a {
     text-decoration: none;
-    color: var(--cor04);
-    font-size: 1.2rem;
-}
-
-header .menu li a:hover {
+    color: var(--cor01);
+    font-size: 1.1rem;
+    font-family: var(--fonte-padrao);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+  
+  .menu li a:hover {
     color: var(--cor02);
-}
+    text-decoration: underline;
+    
+  }
 
 /* Área principal (main) */
 main {
